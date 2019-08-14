@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My_Blog</title>
+</head>
+<body>
+    <div>
+        <h1><a href="">My_Blog</a></h1>
+    </div>
+
+    <div>
+        {% for post in posts %}
+        <p>發佈時間: {{post.created_date}}</p>
+        <h2><a href=>{{post.title}}</a></h2>
+        <p>{{post.text | linebreaks}}</p>
+        {%endfor%}
+    </div>
+</body>
+</html>
