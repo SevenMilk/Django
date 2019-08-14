@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+        <div class="'container">
+            <div class="blog-header">
+                <h1 id="blog-post-title" class="blog-post-title">{{ post.title }}</h1>
+            </div>
+            <div class="row">
+                <div class="col-sm-8 blog-main">
+                    <div id="blog-post" class="blog-post">
+                        <p>{{post.text}}</p>
+                        <p class="blog-post-meta">{{ post.created_date }} by <a href="#">{{ post.author }}</a></p>
+                        <a href="/blog/">回首頁</a>
+                        <p id="current_page">{{post.id}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

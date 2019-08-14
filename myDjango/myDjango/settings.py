@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'i2wx^kl51xsr4#%=(%gadh22lu4r$-z@yil296v2rqm)-a(9j1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False #原本是True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['6d2e2d73.ngrok.io']
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 
 # Application definition

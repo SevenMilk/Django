@@ -1,20 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My_Blog</title>
-</head>
-<body>
-    <div>
-        <h1><a href="">My_Blog</a></h1>
-    </div>
-
+{% extends 'blog/base.html' %}
+{% block content %}
+  <button type="button" class="btn btn-default btn-block"><font size="12">請開始你的表演</font></button>
     <div>
         {% for post in posts %}
         <p>發佈時間: {{post.created_date}}</p>
-        <h2><a href=>{{post.title}}</a></h2>
+        <h2><a href="/blog/{{post.id}}">{{post.title}}</a></h2>
         <p>{{post.text | linebreaks}}</p>
         {%endfor%}
     </div>
-</body>
-</html>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h4>發佈新文章</h4>
+        </div>
+        <div class="col-md-8">
+            <form action="/blog/add_record" method="post" accept-charset="utf-8">
+                {% csrf_token %}
+                <table>
+                    {{post_form.as_table}}
+                </table>
+                <input type="submit" name="add_record" value="提交">
+            </form>
+        </div>
+    </div>
+    <hr>
+  <button type="button" class="btn btn-primary btn-block"><font size="16">宇志波騙你</font></button>
+{% endblock %}
